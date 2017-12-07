@@ -1,0 +1,31 @@
+extends ../template
+
+block content
+  .wrapper.wrapper__main
+    .container
+      button.auth
+        .auth__text Авторизоваться
+      .middle__card
+        .card__photo
+          img.photo__img(src="./assets/images/avatar.jpg", alt="")
+        .card__title Максим Орехов
+        .card__text Личный сайт веб разработчика
+        ul.socials__list
+          li.list__item
+            a.item__link(href="https://vk.com/id12293701")
+              include ../../icons/vk.svg
+          li.list__item
+            a.item__link(href="https://github.com/MaksimOrekhov")
+              include ../../icons/github.svg
+          li.list__item
+            a.item__link(href="https://linkedin.com")
+              include ../../icons/in.svg
+        ul.nav__buttons
+          li.buttons__item
+            a.buttons__link(href="projects.html") Мои работы
+          li.buttons__item
+            a.buttons__link(href="about.html") Обо мне
+          li.buttons__item
+            a.buttons__link(href="blog.html") Блог
+      .copyright
+        .copyright__text &#169; Максим Орехов | создано с любовью в LoftSchool | 2017

@@ -1,0 +1,148 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+  &__main {
+    background: url('../images/main-bg.png') center center no-repeat;
+    background-size: cover;
+  }
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1800px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.auth {
+  display: inline-block;
+  align-self: flex-end;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  margin-top: 25px;
+  margin-right: 100px;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  // margin-bottom: 9%;
+  transition: 0.5s;  
+  &:hover {
+    background-color: #fff;
+    color: #00bfa5;
+    transition: 0.5s;
+  }
+}
+
+.middle__card {
+  width: 382px;
+  align-self: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 7px;
+  font-family: "Roboto Medium", sans-serif;
+}
+
+.card {
+  &__photo {
+  width: 145px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 40px auto 20px auto;
+  }
+  &__title {
+    font-family: "Roboto Medium", sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #455a64;
+  }
+  &__text {
+    font-family: "Roboto Regular", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: #455a64;
+  } 
+}
+
+.photo__img {
+  width: 100%;
+  height: 100%;
+}
+
+.socials__list {
+  display: flex;
+  justify-content: space-around;
+  width: 140px;
+  margin: 35px auto;
+}
+
+.list__item {
+  align-self: center;
+  width: 30px;
+  height: 20px;
+}
+
+.item__link {
+  display: inline-block;
+  &:hover {
+    path {
+      fill: #00bfa5;
+      transition: 0.5s;
+    }
+  }
+}
+
+.item__link  path {
+  fill: #6fd1c6;
+  transition: 0.5s;  
+}
+
+.item__link svg {
+  width: 30px;
+  height: 20px;
+}
+
+.nav__buttons {
+  display: flex;
+  background-color: rgba(10, 172, 152, 0.7);
+  overflow: hidden;
+  border-radius: 0 0 7px 7px;
+}
+
+.buttons__item {
+  &:nth-child(2) {
+    border-left: 2px solid #73c8c0;
+    border-right: 2px solid #73c8c0;    
+  }
+}
+
+.buttons__link {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 31px;
+  transition: 0.5s;  
+  &:hover {
+    background-color: rgba(11, 144, 136, 0.7);
+    transition: 0.5s;    
+  }
+}
+
+.copyright {
+  align-self: center;
+  &__text {
+    font-family: "Roboto Light", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
