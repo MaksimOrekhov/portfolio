@@ -1,0 +1,40 @@
+extends ../template
+include ../common/mixins
+
+block content
+  .wrapper
+    .container__projects
+      section.top
+        include ../common/header
+        .top__info
+          .card__photo.card__photo-about
+            img.photo__img(src="./assets/images/avatar.jpg", alt="")
+          .card__title.card__title-about Максим Орехов
+          .card__text.card__text-about Личный сайт веб разработчика
+        .top__title мои работы
+      section.slider
+        .slider__left
+          .slider__left-title сайт №1
+          .slider__left-tech html, css, javascript
+          button.slider__left-button
+            a(href="#" class="slider__left-button__link") Посмотреть сайт
+        .slider__right
+          ul.slider__list
+            li.slider__item
+            li.slider__item
+            li.slider__item
+      section.comments
+        .comments__title что обо мне говорят
+        .comments__text
+          .comments__text-left текст отзыва 1
+          .comments__text-right текст отзыва 2
+        form(action="server.php" method="post" class="form__elem" id="feedback-form")
+          .feedback__form
+            .form__title связаться со мной
+            input(type="text" class="form__block-input" id="name" name="name" required)
+            input(type="text" class="form__block-input" id="email" name="email" required)
+            textarea(type="text" class="form__block-input-textarea" id="comment" name="comment")
+            button(class="send__button" type="submit") Отправить
+            input(type="reset" class="reset__button" value="Очистить")
+  
+  include ../common/footer

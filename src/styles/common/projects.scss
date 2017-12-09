@@ -1,0 +1,12 @@
+.container__about {
+  height: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.top:after {
+  background: url('../icons/about_bg_left.svg') center no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 200px;
+}

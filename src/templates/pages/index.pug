@@ -1,10 +1,11 @@
 extends ../template
+include ../common/mixins
 
 block content
   .wrapper.wrapper__main
     .container
-      button.auth
-        .auth__text Авторизоваться
+      button.auth__button
+        a.auth__text(href="") Авторизоваться
       .middle__card
         .card__photo
           img.photo__img(src="./assets/images/avatar.jpg", alt="")
@@ -20,12 +21,9 @@ block content
           li.list__item
             a.item__link(href="https://linkedin.com")
               include ../../icons/in.svg
-        ul.nav__buttons
-          li.buttons__item
-            a.buttons__link(href="projects.html") Мои работы
-          li.buttons__item
-            a.buttons__link(href="about.html") Обо мне
-          li.buttons__item
-            a.buttons__link(href="blog.html") Блог
+        ul.buttons__list
+          +list('buttons', ["Мои работы"], "projects.html")
+          +list('buttons', ["Обо мне"], "about.html")
+          +list('buttons', ["Блог"], "blog.html")
       .copyright
         .copyright__text &#169; Максим Орехов | создано с любовью в LoftSchool | 2017

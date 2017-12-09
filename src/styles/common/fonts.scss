@@ -3,7 +3,7 @@
   src: url('../fonts/BERNIERRegular-Regular.woff') format("woff");
   font-weight: normal;
   font-style: normal;
-  -moz-osx-font-smoothing: grayscale;
+  font-display: fallback;
 } 
 
 @font-face {
@@ -11,6 +11,7 @@
   src: url('../fonts/BERNIERShade-Regular.woff') format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -18,6 +19,7 @@
   src: url('../fonts/FontAwesome.woff') format("woff");
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -25,6 +27,7 @@
   src: url('../fonts/Roboto-Bold.woff') format("woff");
   font-weight: 800;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -32,6 +35,7 @@
   src: url('../fonts/Roboto-BoldItalic.woff') format("woff");
   font-weight: bold;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -39,6 +43,7 @@
   src: url('../fonts/Roboto-Italic.woff') format("woff");
   font-weight: normal;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -46,6 +51,7 @@
   src: url('../fonts/Roboto-Light.woff') format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -53,6 +59,7 @@
   src: url('../fonts/Roboto-LightItalic.woff') format("woff");
   font-weight: 300;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -60,6 +67,7 @@
   src: url('../fonts/Roboto-Medium.woff') format("woff");
   font-weight: 700;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -67,6 +75,7 @@
   src: url('../fonts/Roboto-MediumItalic.woff') format("woff");
   font-weight: 700;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -74,4 +83,5 @@
   src: url('../fonts/Roboto-Regular.woff') format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }

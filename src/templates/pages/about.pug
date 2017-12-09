@@ -1,0 +1,66 @@
+extends ../template
+include ../common/mixins
+
+block content
+  .wrapper
+    .container__about
+      section.top
+        include ../common/header
+        .top__info
+          .card__photo.card__photo-about
+            img.photo__img(src="./assets/images/avatar.jpg", alt="")
+          .card__title.card__title-about Максим Орехов
+          .card__text.card__text-about Личный сайт веб разработчика
+      section.middle
+        .middle__left
+          .block__title-left
+            .title__text обо мне
+          .block__info
+            .info__img
+              img.img__pic(src="./assets/images/avatar.jpg", alt="")
+            .info__title
+              .title__text кто я
+            .info__text Я веб разработчик из Брянска. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений.   Мне нравится делать интересные и современные проекты. 
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+
+        .middle__right
+          .block__title-right
+            .title__text-right чем я могу быть вам полезен
+          .right__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+          .block__tech
+            .tech__frontend
+              .frontend__html
+                span.tech__name HTML5
+              .frontend__css
+                span.tech__name CSS3
+              .frontend__js
+                span.tech__name JavaScript & jQuery
+            .tech__backend
+              .backend__php
+                span.tech__name PHP
+              .backend__sql
+                span.tech__name MySQL
+              .backend__node
+                span.tech__name Node.js & npm
+              .backend__mongo
+                span.tech__name Mongo.db
+            .tech__workflow
+              .workflow__git
+                span.tech__name Git
+              .workflow__gulp
+                span.tech__name Gulp
+              .workflow__bower
+                span.tech__name Bower
+        
+      section.contacts
+        .map#map
+        .contacts__card
+          .contacts__title контакты
+            ul.contacts__list
+              li.contact__item skype
+              li.contact__item mail
+              li.contact__item phone
+              li.contact__item address
+
+  include ../common/footer
+
