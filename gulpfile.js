@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const pug = require('gulp-pug');
+const autoprefixer = require('gulp-autoprefixer');
+const plumber = require('gulp-plumber');
 
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
@@ -51,11 +53,13 @@ function templates() {
 // scss
 function styles() {
     return gulp.src('./src/styles/app.scss')
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.styles.dest))
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(sass({ 
             includePaths: require('node-normalize-scss').includePaths
           }))
@@ -69,6 +73,7 @@ function clean() {
 // webpack
 function scripts() {
     return gulp.src('src/scripts/app.js')
+        .pipe(plumber())
         .pipe(gulpWebpack(webpackConfig, webpack)) 
         .pipe(gulp.dest(paths.scripts.dest));
 }
@@ -94,18 +99,21 @@ function server() {
 // просто переносим картинки
 function images() {
     return gulp.src(paths.images.src)
+        .pipe(plumber())
         .pipe(gulp.dest(paths.images.dest));
 }
 
 // перенос шрифтов
 function fonts() {
     return gulp.src(paths.fonts.src)
+        .pipe(plumber())
         .pipe(gulp.dest(paths.fonts.dest));
 }
 
 // перенос иконок
 function icons() {
     return gulp.src(paths.icons.src)
+        .pipe(plumber())
         .pipe(gulp.dest(paths.icons.dest));
 }
 

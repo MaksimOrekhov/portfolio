@@ -2,65 +2,92 @@ extends ../template
 include ../common/mixins
 
 block content
-  .wrapper
+  .wrapper.wrapper__about
     .container__about
       section.top
         include ../common/header
+        .top__bg
+          include ../../icons/portfolio_header.svg
         .top__info
           .card__photo.card__photo-about
             img.photo__img(src="./assets/images/avatar.jpg", alt="")
           .card__title.card__title-about Максим Орехов
           .card__text.card__text-about Личный сайт веб разработчика
+        .border__left
+        .border__right
+        a(href="#" class="go__to go__to-bottom")
+          include ../../icons/arrow.svg
       section.middle
         .middle__left
           .block__title-left
+            .title__line
             .title__text обо мне
+            .title__line
+            include ../../icons/about_header.svg
           .block__info
             .info__img
               img.img__pic(src="./assets/images/avatar.jpg", alt="")
             .info__title
-              .title__text кто я
+              .title__line
+              .title__text.title__text-small кто я
+              .title__line
             .info__text Я веб разработчик из Брянска. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений.   Мне нравится делать интересные и современные проекты. 
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
 
         .middle__right
           .block__title-right
-            .title__text-right чем я могу быть вам полезен
-          .right__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+            .title__line.title__line-usefull
+            .title__text.title__text-right чем я могу быть вам полезен
+            .title__line.title__line-usefull
+          .right__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
           .block__tech
-            .tech__frontend
-              .frontend__html
+            .tech__block
+              .tech__title Frontend
+              .tech__progress
                 span.tech__name HTML5
-              .frontend__css
+              .tech__progress
                 span.tech__name CSS3
-              .frontend__js
+              .tech__progress
                 span.tech__name JavaScript & jQuery
-            .tech__backend
-              .backend__php
+            .tech__block
+              .tech__title Backend
+              .tech__progress
                 span.tech__name PHP
-              .backend__sql
+              .tech__progress
                 span.tech__name MySQL
-              .backend__node
+              .tech__progress
                 span.tech__name Node.js & npm
-              .backend__mongo
+              .tech__progress
                 span.tech__name Mongo.db
-            .tech__workflow
-              .workflow__git
+            .tech__block
+              .tech__title Workflow
+              .tech__progress
                 span.tech__name Git
-              .workflow__gulp
+              .tech__progress
                 span.tech__name Gulp
-              .workflow__bower
+              .tech__progress
                 span.tech__name Bower
         
       section.contacts
         .map#map
         .contacts__card
-          .contacts__title контакты
-            ul.contacts__list
-              li.contact__item skype
-              li.contact__item mail
-              li.contact__item phone
-              li.contact__item address
-
-  include ../common/footer
+          .contacts__card-title
+            .title__line
+            .contacts__title контакты
+            .title__line
+          ul.contacts__list
+            li.contacts__item
+              include ../../icons/skype.svg              
+              a(href="#" class="contacts__link") frostnova31
+            li.contacts__item
+              include ../../icons/envelope.svg  
+              a(href="#" class="contacts__link") timberwolf.max@gmail.com
+            li.contacts__item
+              include ../../icons/phone.svg  
+              a(href="#" class="contacts__link") 8-910-235-15-24
+            li.contacts__item
+              include ../../icons/map_marker.svg  
+              a(href="#" class="contacts__link") г. Брянск, ул. Гомельская, д.34
+    .footer__container
+      include ../common/footer
 

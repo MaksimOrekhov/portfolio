@@ -6,35 +6,85 @@ block content
     .container__projects
       section.top
         include ../common/header
+        .top__bg
+          include ../../icons/portfolio_header.svg
         .top__info
           .card__photo.card__photo-about
             img.photo__img(src="./assets/images/avatar.jpg", alt="")
           .card__title.card__title-about Максим Орехов
           .card__text.card__text-about Личный сайт веб разработчика
-        .top__title мои работы
+        .border__left.border__left-projects
+        .border__right.border__right-projects
+        a(href="#" class="go__to go__to-bottom")
+          include ../../icons/arrow.svg
+        
       section.slider
-        .slider__left
-          .slider__left-title сайт №1
-          .slider__left-tech html, css, javascript
-          button.slider__left-button
-            a(href="#" class="slider__left-button__link") Посмотреть сайт
-        .slider__right
-          ul.slider__list
-            li.slider__item
-            li.slider__item
-            li.slider__item
+        .slider__block-title
+          .title__line
+          .slider__title мои работы
+          .title__line
+          include ../../icons/works_header.svg
+        .slider__container
+          .slider__left
+            .slider__left-title
+              .title__line.title__line-slider
+              .slider__left-text сайт школы онлайн образования
+              .title__line.title__line-slider
+            .slider__left-tech html, css, javascript
+            a(href="#" class="slider__left-button__link")
+              include ../../icons/link.svg
+              span.button__link-text Посмотреть сайт
+          .slider__right
+            .slider__item.slider__item-current
+              img(class="slider__image-current" src="./assets/images/slider__item1.png")
+            .slider__items-bottom
+              .slider__item.slider__item-other
+                img(class="slider__image" src="./assets/images/slider__item2.png")
+                .slider__item-overlay
+                  include ../../icons/arrow_down.svg
+              .slider__item.slider__item-other
+                img(class="slider__image" src="./assets/images/slider__item3.png")
+                .slider__item-overlay
+                  include ../../icons/arrow_up.svg
       section.comments
-        .comments__title что обо мне говорят
+        .comments__title
+          .title__line.title__line-comments
+          .comments__title-text что обо мне говорят
+          .title__line.title__line-comments
+          include ../../icons/about_header.svg
         .comments__text
-          .comments__text-left текст отзыва 1
-          .comments__text-right текст отзыва 2
+          .comments__text-left
+            .comment__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .commentator 
+              .commentator__img
+                img(class="commentator__image" src="./assets/images/commentator_1.png")
+              .commentator__name
+                .name__text Ковальчук Дмитрий
+                .name__occ основатель LoftSchool
+          .comments__text-right
+            .comment__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+            .commentator 
+              .commentator__img
+                img(class="commentator__image" src="./assets/images/commentator_2.png")
+              .commentator__name
+                .name__text Сабанцев Владимир
+                .name__occ преподаватель
         form(action="server.php" method="post" class="form__elem" id="feedback-form")
           .feedback__form
-            .form__title связаться со мной
-            input(type="text" class="form__block-input" id="name" name="name" required)
-            input(type="text" class="form__block-input" id="email" name="email" required)
-            textarea(type="text" class="form__block-input-textarea" id="comment" name="comment")
-            button(class="send__button" type="submit") Отправить
-            input(type="reset" class="reset__button" value="Очистить")
+            .form__inputs
+              .form__title
+                .title__line
+                .form__title-text связаться со мной
+                .title__line
+              input(type="text" class="form__block-input" id="name" name="name" placeholder="Имя" required)
+              input(type="text" class="form__block-input" id="email" placeholder="Email" name="email" required)
+              textarea(type="text" class="form__block-input-textarea" placeholder="Ваше сообщение" id="comment" name="comment")
+            .form__buttons
+              button(class="send__button" type="submit") Отправить
+              input(type="reset" class="reset__button" value="Очистить")
+            .feedback__form-overlay
+        a(href="#" class="go__to")
+          include ../../icons/arrow.svg
+        
   
   include ../common/footer
