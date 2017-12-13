@@ -1,0 +1,210 @@
+.form__inputs-auth {
+  padding: 20px 20px 0 20px;
+}
+
+.login__input {
+  display: flex;
+  height: 45px;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.login__img {
+  width: 45px;
+  height: 45px;
+  background-color: #f0efe9;
+  position: relative;
+  border-radius: 5px 0 0 5px;
+  font-family: "Font Awesome";
+
+  svg {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
+  path {
+    fill: #c4cbcd;
+  }
+}
+
+.auth-form-input {
+  padding-left: 20px;
+  outline: none;
+  border: 1px solid transparent;
+  width: 100%;
+  border-radius: 0 5px 5px 0;  
+  transition: 0.4s;  
+  &:focus {
+    border-color: #00bfa5;
+    transition: 0.4s;
+  }
+}
+
+.human__check {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #455a64;
+  &-label {
+  align-items: center;
+  display: flex; 
+  cursor: pointer;
+  }
+
+}
+
+.auth-form-checkbox {
+  position: absolute;
+  left: -99999px;
+}
+
+.fake__checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-right: 10px;
+  transition: 0.4s;  
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    text-align: center;
+    background-image: url('../icons/check.svg');
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #00bfa5;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+    opacity: 0;
+  }
+}
+
+.auth-form-checkbox:checked + .fake__checkbox:before {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.radio {
+  color: #455a64;
+  &__row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #455a64;
+  }
+  &__title {
+    text-align: center;
+    display: block;
+    margin-bottom: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  &__check {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+}
+
+.auth-form-radio {
+  position: absolute;
+  left: -99999px;
+}
+
+.fake__radio {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cdcdcd;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 10px;
+  transition: 0.4s;  
+}
+
+.label {
+  transition: 0.4s;
+}
+
+.fake__radio:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #30c8b3;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.4s;  
+}
+
+.auth-form-radio:checked +  .fake__radio:before {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.auth-form-radio:checked ~ .label {
+  color: #30c8b3;     
+  transition: 0.4s; 
+}
+
+.form__buttons {
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+}
+
+.login__button {
+  border-left: 2px solid #73c8c0;
+  width: 50%;
+  cursor: pointer;
+  padding: 16px 0 16px 0;
+  border: none;
+  background-color: rgba($color: #09b09e, $alpha: 0.7);  
+  transition: 0.5s;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 16px;
+  color: #fff;  
+  &:hover {
+    background-color: rgba(11,144,136,0.7);
+    transition: 0.5s;
+  }
+}
+
+.button__back {
+  width: 50%;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 auto;
+  background-color: rgba($color: #09b09e, $alpha: 0.7);
+  transition: 0.5s;
+  border-right: 2px solid #74cac3;
+  padding: 15px 50px;
+  &:hover {
+    background-color: rgba(11,144,136,0.7);
+    transition: 0.5s;
+  }
+}
+
+

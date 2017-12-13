@@ -5,6 +5,7 @@ block content
   .wrapper.wrapper__about
     .container__about
       section.top
+        include ../common/menu
         include ../common/header
         .top__bg
           include ../../icons/portfolio_header.svg
@@ -21,7 +22,7 @@ block content
         .middle__left
           .block__title-left
             .title__line
-            .title__text обо мне
+            .title__text Обо мне
             .title__line
             include ../../icons/about_header.svg
           .block__info
@@ -29,7 +30,7 @@ block content
               img.img__pic(src="./assets/images/avatar.jpg", alt="")
             .info__title
               .title__line
-              .title__text.title__text-small кто я
+              .title__text.title__text-small Кто я
               .title__line
             .info__text Я веб разработчик из Брянска. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений.   Мне нравится делать интересные и современные проекты. 
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
@@ -37,7 +38,7 @@ block content
         .middle__right
           .block__title-right
             .title__line.title__line-usefull
-            .title__text.title__text-right чем я могу быть вам полезен
+            .title__text.title__text-right Чем я могу быть вам полезен
             .title__line.title__line-usefull
           .right__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
           .block__tech
@@ -73,7 +74,7 @@ block content
         .contacts__card
           .contacts__card-title
             .title__line
-            .contacts__title контакты
+            .contacts__title Контакты
             .title__line
           ul.contacts__list
             li.contacts__item

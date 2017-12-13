@@ -1,0 +1,22 @@
+.rotate__container {
+  transition: 1s;
+  transform-style: preserve-3d;
+  max-height: 400px;
+}
+
+
+.rotate__container .middle__card-front {
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.rotate__container .middle__card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  transform: rotateY(180deg);
+  
+}
+
+.active {
+  transform: rotateY(180deg);
+}

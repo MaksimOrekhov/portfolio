@@ -5,6 +5,7 @@ block content
   .wrapper
     .container__projects
       section.top
+        include ../common/menu
         include ../common/header
         .top__bg
           include ../../icons/portfolio_header.svg
@@ -21,14 +22,14 @@ block content
       section.slider
         .slider__block-title
           .title__line
-          .slider__title мои работы
+          .slider__title Мои Работы
           .title__line
           include ../../icons/works_header.svg
         .slider__container
           .slider__left
             .slider__left-title
               .title__line.title__line-slider
-              .slider__left-text сайт школы онлайн образования
+              .slider__left-text Сайт школы онлайн образования
               .title__line.title__line-slider
             .slider__left-tech html, css, javascript
             a(href="#" class="slider__left-button__link")
@@ -49,7 +50,7 @@ block content
       section.comments
         .comments__title
           .title__line.title__line-comments
-          .comments__title-text что обо мне говорят
+          .comments__title-text Что обо мне говорят
           .title__line.title__line-comments
           include ../../icons/about_header.svg
         .comments__text
@@ -74,7 +75,7 @@ block content
             .form__inputs
               .form__title
                 .title__line
-                .form__title-text связаться со мной
+                .form__title-text Связаться со мной
                 .title__line
               input(type="text" class="form__block-input" id="name" name="name" placeholder="Имя" required)
               input(type="text" class="form__block-input" id="email" placeholder="Email" name="email" required)

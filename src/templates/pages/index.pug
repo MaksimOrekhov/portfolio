@@ -5,25 +5,27 @@ block content
   .wrapper.wrapper__main
     .container
       button.auth__button
-        a.auth__text(href="") Авторизоваться
-      .middle__card
-        .card__photo
-          img.photo__img(src="./assets/images/avatar.jpg", alt="")
-        .card__title Максим Орехов
-        .card__text Личный сайт веб разработчика
-        ul.socials__list
-          li.list__item
-            a.item__link(href="https://vk.com/id12293701")
-              include ../../icons/vk.svg
-          li.list__item
-            a.item__link(href="https://github.com/MaksimOrekhov")
-              include ../../icons/github.svg
-          li.list__item
-            a.item__link(href="https://linkedin.com")
-              include ../../icons/in.svg
-        ul.buttons__list
-          +list('buttons', ["Мои работы"], "projects.html")
-          +list('buttons', ["Обо мне"], "about.html")
-          +list('buttons', ["Блог"], "blog.html")
+        a.auth__text(href="#") Авторизоваться
+      .rotate__container
+        .middle__card.middle__card-front
+          .card__photo
+            img.photo__img(src="./assets/images/avatar.jpg", alt="")
+          .card__title Максим Орехов
+          .card__text Личный сайт веб разработчика
+          ul.socials__list
+            li.list__item
+              a.item__link(href="https://vk.com/id12293701")
+                include ../../icons/vk.svg
+            li.list__item
+              a.item__link(href="https://github.com/MaksimOrekhov")
+                include ../../icons/github.svg
+            li.list__item
+              a.item__link(href="https://linkedin.com")
+                include ../../icons/in.svg
+          ul.buttons__list
+            +list('buttons', ["Мои работы"], "projects.html")
+            +list('buttons', ["Обо мне"], "about.html")
+            +list('buttons', ["Блог"], "blog.html")
+        include ../common/auth
       .copyright
         .copyright__text &#169; Максим Орехов | создано с любовью в LoftSchool | 2017

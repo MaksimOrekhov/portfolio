@@ -31,10 +31,12 @@
   margin-top: 70px;
   &__nav {
     width: 26%;
+    padding-left: 40px;
   }
   &__articles {
     width: 74%;
-    padding-left: 50px;    
+    padding-left: 50px; 
+    padding-right: 110px;   
   }
   &__list {
     text-align: right;

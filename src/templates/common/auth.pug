@@ -1,0 +1,35 @@
+.middle__card.middle__card-back
+  form(action="server.php" method="post" class="auth-form" id="auth-form")
+    .auth__form-container
+      .form__inputs.form__inputs-auth
+        .form__title
+          .title__line
+          .form__title-text Авторизуйтесь
+          .title__line
+        .login__input
+          .login__img
+            include ../../icons/login.svg
+          input(type="text" class="auth-form-input" id="login" name="login" placeholder="Логин" required)
+        .login__input
+          .login__img
+            include ../../icons/password.svg
+          input(type="password" class="auth-form-input" id="password" placeholder="Пароль" name="password" required)
+        .human__check
+          label(for="human__check" class="human__check-label")
+            input(type="checkbox" class="auth-form-checkbox" id="human__check")
+            .fake__checkbox
+            span.label Я человек
+        .radio
+          .radio__title Вы точно не робот?
+          .radio__row
+            label(for="radio__check-yes" class="radio__check")
+              input(type="radio" class="auth-form-radio" id="radio__check-yes" name="human__radio" checked)
+              .fake__radio
+              .label Да
+            label(for="radio__check-no" class="radio__check")
+              input(type="radio" class="auth-form-radio" id="radio__check-no" name="human__radio")
+              .fake__radio
+              .label Не уверен
+      .form__buttons
+        a(href="#" class="button__back") На главную
+        button(class="login__button" type="submit") Войти
