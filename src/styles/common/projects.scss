@@ -20,6 +20,10 @@
   svg {
     position: absolute;
     z-index: 1;
+    @include phones {
+      width: 236px;
+      height: 72px;
+    }
   }
   path {
     fill: #f0eee7;
@@ -32,9 +36,20 @@
   font-size: 63px;
   color: #373e42;
   z-index: 3;
+  @include phones {
+    font-size: 35px;
+  }
   }
   &__container {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    @include tablets {
+      height: auto;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
   }
   &__left {
     display: flex;
@@ -43,6 +58,13 @@
     background-color: #f0efe9;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    @include tablets {
+      height: 272px;
+    }
+    @include phones {
+      height: 220px;
+    }
     &-title {
       display: flex;
       align-items: center;
@@ -50,16 +72,40 @@
       font-size: 35px;
       color: #373e42;
       text-align: center;
+      @include phones {
+        font-size: 21px;
+      }
     }
     &-text {
       max-width: 270px;
+      @include tablets {
+        max-width: 100%;
+      }
+      @include phones {
+        max-width: 160px;
+      }
     }
   }
   &__right {
     display: flex;
-    flex-direction: column;
     width: 50vw;
     background-color: #efebe0;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    @include tablets {
+      height: 530px;
+      order: -10;
+    }
+    @include phones {
+      height: 260px;
+    }
+  }
+}
+
+.slider__left, .slider__right, .slider__items-bottom {
+  @include tablets {
+    width: 100%;
   }
 }
 
@@ -69,7 +115,7 @@
 }
 
 .slider__left-tech {
-  padding: 20px 130px;
+  padding: 20px;
   color: #00bfa5;
   text-transform: uppercase;
   font-family: "Roboto Medium", sans-serif;
@@ -77,6 +123,16 @@
   margin: 40px 0;
   border-top: 1px solid #00bfa5;
   border-bottom: 1px solid #00bfa5;
+  width: 100%;
+  text-align: center;
+  @include tablets {
+    margin: 20px 0;  
+  }
+  @include phones {
+    padding: 10px;  
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .slider__left-button__link {
@@ -99,17 +155,8 @@
   font-size: 16px;
 }
 
-.slider__right {
-  display: flex;
-  flex-direction: column;
-}
-
 .slider__item {
   text-align: center;
-  &-current {
-    padding-top: 115px;
-    padding-bottom: 110px;
-  }
   &-other {
     width: 50%;    
     position: relative;
@@ -126,7 +173,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
+    transform: translate(-50%, -50%);
     cursor: pointer;
   }
 }
@@ -134,11 +181,23 @@
 .slider__items-bottom {
   display: flex;
   justify-content: center;
+  height: 30vh;
+  @include tablets {
+    height: 217px;
+  }
+  @include phones {
+    height: 90px;
+  }
 }
 
 .slider__image {
   width: 100%;
   height: 100%;
+  &-current {
+    @include phones {
+      max-width: 73%;
+    }
+  }
 }
 
 .comments {
@@ -158,6 +217,12 @@
     color: #373e42;
     text-align: center;
     margin: 70px 0;
+    @include phones {
+      margin-top: 40px;
+      margin-bottom: 30px;
+      font-size: 35px;
+      max-width: 242px;
+    }
 
     svg {
       position: absolute;
@@ -165,6 +230,16 @@
       top: -22%;
       left: -11%;
       width: 500px;
+      @include tablets {
+        top: -90%;
+        left: 9%;
+      }
+      @include phones {
+        top: -15%;
+        left: 0;
+        width: 246px;
+        height: 80px;
+      }
     }
     path {
       fill: #eceded;
@@ -180,6 +255,9 @@
 .comments__title-text {
   z-index: 3;
   max-width: 300px;
+  @include tablets {
+    max-width: 100%;
+  }
 }
 
 .comments__text {
@@ -188,6 +266,13 @@
   font-family: "Roboto Regular", sans-serif;
   font-size: 16px;
   margin-bottom: 70px;
+  @include tablets {
+    padding: 0 30px;
+  }
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
   &-right,
   &-left {
     max-width: 370px;
@@ -196,6 +281,10 @@
   }
   &-left {
     margin-right: 40px;
+    @include phones {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -233,12 +322,15 @@
   display: flex;
   flex-direction: column;
   width: 380px;
-  background-color: transparent;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 70px;
   z-index: 5;
   background-color: rgba($color: #fff, $alpha: 0.5);
+  @include phones {
+    width: 300px;
+    margin-bottom: 50px;
+  }
   &-overlay {
     
   }
@@ -309,6 +401,9 @@
 .go__to {
   margin-bottom: 70px;
   transition: 0.5s;  
+  @include phones {
+    margin-bottom: 30px;
+  }
   &-bottom {
     position: absolute;
     left: 49%;

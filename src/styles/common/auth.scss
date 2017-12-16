@@ -201,6 +201,9 @@
   transition: 0.5s;
   border-right: 2px solid #74cac3;
   padding: 15px 50px;
+  @include phones {
+    padding: 15px 30px;    
+  }
   &:hover {
     background-color: rgba(11,144,136,0.7);
     transition: 0.5s;

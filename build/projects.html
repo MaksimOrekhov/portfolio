@@ -9,6 +9,7 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
     <script src="./assets/scripts/bundle.js" defer></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   </head>
   <body> 
     <div class="wrapper">
@@ -1198,9 +1199,10 @@
             </div>
             <div class="slider__right">
               <div class="slider__item slider__item-current"><img class="slider__image-current" src="./assets/images/slider__item1.png"></div>
-              <div class="slider__items-bottom">
-                <div class="slider__item slider__item-other"><img class="slider__image" src="./assets/images/slider__item2.png">
-                  <div class="slider__item-overlay"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="31" viewBox="0 0 46 31">
+            </div>
+            <div class="slider__items-bottom">
+              <div class="slider__item slider__item-other"><img class="slider__image" src="./assets/images/slider__item2.png">
+                <div class="slider__item-overlay"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="31" viewBox="0 0 46 31">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1232,10 +1234,10 @@
 <image id="portf_arrow_down" width="46" height="31" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAeCAQAAAAS/V8SAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhDAoQOwXrf9clAAACJElEQVRIx63Sv0tbURjG8e/tvYFAjHFNYvIfZFCoIUNaULK00ckfQ0EQt3YsGRwcA04t7RLHFlFncXMXHFtHQYRMUapUk3oDuSdvh9vepjHnepL2Wd/3+XAO50AQmZELaco6I0XWpSkXMjNolJdbERER9WZ4WL32u3Ir+X54Vu4liNoYEt7405V7me0ZdeZ64WHxv2ARkfvO3K+RVxZXHkRtGsKbD7viemUAS65kcLYMHm9L073CAkddioyGa2FRlzgQPV7sulr8vVga1pJ3ulLXPV4kClGSh6sheG0QLpbU9PDhKkmi4JAgu7+imtrLbffjYqlt7XZzf4UsCRywiDBBdmc5BP8sdg9sq096eGeZLBNEsCDAd5e879rK3m9cbLWn2/Jud5d64R68VvZuwvFQ+KZW7of9REiQCcO7BzLWPQiFMySIDPpPDgkyH150Grq6fNMNOo2PL8n4jzc4Dgky1VIIroGrpXDYx8eZHA7vNKolJhkPhwP87bN23Qxu1yvPzeAArxRN8Ha9UjSHfTxOulJ0zx+BzytF0sTNYQCbOOm1vHumh92ztTxp4tjDwAb46LCPj5F69bR1+hBuna7OkBoVDvD56X68dTo/TYqx0eEAX5hqfemBvy5M/Tsc4IXc3YkP350Ucv8H9vEYyULu+ki866NCjiQxE9h6fAWwiTJODBvFD+5oo0xKJhEUCkHh0qRN16RkdmqAJzjYKDwzGH4C7xw92jGB1rMAAAAASUVORK5CYII="/>
 </svg>
 
-                  </div>
                 </div>
-                <div class="slider__item slider__item-other"><img class="slider__image" src="./assets/images/slider__item3.png">
-                  <div class="slider__item-overlay"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="31" viewBox="0 0 46 31">
+              </div>
+              <div class="slider__item slider__item-other"><img class="slider__image" src="./assets/images/slider__item3.png">
+                <div class="slider__item-overlay"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="31" viewBox="0 0 46 31">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1267,7 +1269,6 @@
 <image id="portf_arrow_up" width="46" height="31" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAeCAQAAAAS/V8SAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhDAoQOyM5clLYAAACHklEQVRIx7XSv0sbYRzH8ffppRfTirFejIgc5AdBBKcOttBJ/wbd1D/Eqd0dnJ20UCcRydw6tgg6iLQIGUQCQa62SEzSNLnn2+FMTIx3uWj8jM/n+bzggQcCRiKyK3XZlUjQRWBYHYiIiKiDvuIyIt/kLt9lpG+wOpS2qMO+4DJ2H77FzafCMXUqD0adSuxZ4CfiMiU/xD8/ZepxcE66J9czHhDuHZe05APCIiJ5ST8PHByXGW+4/scHn+kGz4rttf799f2bqy+euC2zj4Tt7Ng0ybFpO/sIXObklzdsZpjgNRNmxge/krmH4WuvxeWemSFOBJ0IcTNzueeJX3fg8tYbLuwYaeIMMQAMMETcSBd2fPB3LXBtQco+cKoJ08RTPni5ttCA573hiy0jxXgL3MDHjdTFlg8+D6BJwevG+SbJDriJkzzf9MQLaKAru0c4AK5sdAgfL6u/nWVugyQxwmgef1UjTIxkbuMBuHq8TBjCTGZXVKW9PFsn4Qvf4Ymz9XtwJbvCJGHQiWLtr7biZ+skMLvADdxsx1VlfxWLKDpohBjF+rTkFN3y5GNAuAU/+eBuneLnJSxGCblrjRBRrO3Fat4pHa2RwMQIBLtrA5PE0ZpTqua3F7GIurB2W+u8ZJghNKoUueEfEpAGjRe8YhgDoUKREnUEBm9rhYNCqFGi1BPcWAtClRvKLkzbswfR0XAaVU/R0BlEqOM0jv4DynNRdCuvfMgAAAAASUVORK5CYII="/>
 </svg>
 
-                  </div>
                 </div>
               </div>
             </div>
@@ -1700,7 +1701,7 @@
 		S19.406,18,18,18z"/>
 </g>
 </svg></a></li>
-          <li class="list__item"><a class="item__link item__link-footer" href="https://linkedin.com"><?xml version="1.0" encoding="utf-8"?>
+          <li class="list__item"><a class="item__link item__link-footer item__link-footer-in" href="https://linkedin.com"><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

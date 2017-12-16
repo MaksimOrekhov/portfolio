@@ -2,10 +2,11 @@
   position: relative;
   width: 100vw;
   min-height: 100%;
+  overflow: hidden;
+  
   &__main {
     background: url('../images/main-bg.png') center center no-repeat;
     background-size: cover;
-    // height: 100%;
     min-height: 100vh;  
   }
 }
@@ -35,6 +36,12 @@
   z-index: 3;
   padding: 0;
   transition: 0.6s;  
+  @include tablets {
+    margin-right: 25px; 
+  }
+  @include phones {
+    margin: 10px auto;      
+  }
   &:before {
     position: absolute;
     left: 0;
@@ -74,6 +81,9 @@
   width: 382px;
   align-self: center;
   justify-content: center;
+  @include phones {
+    max-width: 300px;
+  }
 }
 
 .middle__card {
@@ -83,6 +93,9 @@
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 7px;
   font-family: "Roboto Medium", sans-serif;
+  @include phones {
+    max-width: 300px;
+  }
 }
 
 .card {
@@ -166,6 +179,9 @@
   display: inline-block;
   padding: 15px 31px;
   transition: 0.5s;  
+  @include phones {
+  padding: 18px 17px;
+  }
   &:hover {
     background-color: rgba(11, 144, 136, 0.7);
     transition: 0.5s;    
@@ -174,11 +190,25 @@
 
 .copyright {
   align-self: center;
+  @include phones {
+    display: none;
+  }
+  &-phones {
+    display: none;
+    @include phones {
+      display: block;
+    }
+  }
   &__text {
     font-family: "Roboto Light", sans-serif;
     color: #fff;
     font-size: 16px;
     margin-bottom: 40px;
     margin-top: 20px;
+    @include phones {
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
   }
 }

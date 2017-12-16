@@ -1,9 +1,8 @@
-.footer__container {
+.footer__about {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  
 }
 
 .footer {
@@ -16,38 +15,80 @@
   justify-content: space-between;
   padding: 30px 30px;
   border-bottom: 1px solid #4b5255;
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .footer-buttons__list {
   display: flex;
   font-family: "Roboto Medium", sans-serif;
   font-size: 16px;
+  align-items: center;
+  @include tablets {
+    margin-bottom: 20px;
+  }
 }
 
 .footer-buttons {
   &__link {
     color: #fff;
     text-decoration: none;
+    @include phones {
+      font-size: 13px;
+    }
     &:hover {
       text-decoration: underline;
     }
   }
   &__item:not(:last-child) {
     margin-right: 40px;
+    @include phones {
+      margin-right: 10px;
+    }
   }
 }
 
 .socials__list-footer {
   margin: 0;
+  .list__item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #626f74;
+    border-radius: 50%;
+    overflow: hidden;  
+  }
 }
 
 .item__link-footer {
+  position: relative;
+  width: 40px;  
+  height: 40px;
+  
+  svg {
+    width: 25px;
+    height: 16px;
+    position: absolute;
+    top: 49%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+  }
+  &-in {
+    svg {
+      top: 43%;
+      left: 52%;
+    }
+  }
   path {
     fill: #9b9fa1;
   }
   &:hover {
+    transition: 0.5s;
+    background-color: #fff;
+    
     path {
-      fill: #fff;
+      fill: #2f4146;
     }
   }
 }
@@ -57,18 +98,31 @@
   justify-content: space-between;
   padding: 18px 30px;
   color: #aeb0b1;
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .bottom__left {
   max-width: 500px;
   font-family: "Roboto Light", sans-serif;
   font-size: 16px;
+  @include tablets {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
 }
 
 .bottom__right {
   align-self: center;
+  
 }
 
 .copyright__text-footer {
   margin: 0;
+  @include tablets {
+    color: #aeb0b1;  
+  }
 }
