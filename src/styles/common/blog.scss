@@ -32,11 +32,18 @@
   &__nav {
     width: 26%;
     padding-left: 40px;
+    @include tablets {
+      display: none;
+    }
   }
   &__articles {
     width: 74%;
     padding-left: 50px; 
     padding-right: 110px;   
+    @include tablets {
+      width: 100%;
+      padding: 0 25px;
+    }
   }
   &__list {
     text-align: right;
@@ -67,11 +74,23 @@
 .article {
   &__item {
     padding-bottom: 70px;
+    @include tablets {
+      padding-bottom: 50px;
+    }
+    @include phones {
+      padding-bottom: 30px;
+    }
     &:first-child {
       border-bottom: 5px solid #f1f1f2;
     }
     &:not(:first-child) {
       margin-top: 70px;
+      @include tablets {
+        margin-top: 50px;
+      }
+      @include phones {
+        margin-top: 30px;
+      }
     }
   }
   &__title {

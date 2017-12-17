@@ -23,7 +23,7 @@
   height: 100vh;
   background: url('../images/about-bg.png') center center no-repeat;
   background-size: cover;
-  min-height: 620px;
+  min-height: 650px;
   z-index: 1;
   &__info {
     position: relative;
@@ -101,6 +101,9 @@
   height: 100%;
   z-index: 2;
   justify-content: center;
+  @include tablets {
+    flex-direction: column;
+  }
   &__left {
     display: flex;
     width: 50vw;
@@ -108,12 +111,21 @@
     padding-top: 25px;
     flex-direction: column;
     align-items: center;
+    @include tablets {
+      width: 100vw;
+    }
   }
   &__right {  
     width: 50vw;   
     background-color: #eeebdf;
     margin: 0 auto;
     padding: 25px 10px 40px 40px;
+    @include tablets {
+      width: 100vw;
+    }
+    @include phones {
+    padding: 0;   
+    }
   }
 }
 
@@ -127,7 +139,7 @@
     svg {
       position: absolute;
       z-index: 1;
-      top: -90%;
+      top: -77%;
       width: 365px;
     }
     path {
@@ -138,6 +150,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include tablets {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -150,6 +165,9 @@
   &-usefull {
     align-self: flex-start;
     margin-top: 18px;
+    @include phones {
+    margin-top: 40px;
+    }
   }
 }
 
@@ -168,6 +186,9 @@
     font-size: 35px; 
     color: #455a64;
     width: 235px;
+    @include phones {
+      width: 100%;
+    }
   }
 }
 
@@ -184,12 +205,17 @@
 .block__info {
   width: 75%;
   margin-top: 60px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .info__img {
   margin: 0 auto;
-  width: 445px;
   margin-bottom: 40px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .img__pic {
@@ -204,6 +230,9 @@
   font-size: 16px;
   color: #455a64;
   line-height: 1.5em;  
+  @include phones {
+    padding: 0 10px;
+  }
 }
 
 .info__title {
@@ -219,11 +248,31 @@
   font-size: 16px;
   line-height: 1.5em;
   color: #455a64;
+  @include tablets {
+    text-align: center;
+  }
+  @include phones {
+    padding: 0 10px;
+  }
 }
 
-.tech__block:not(:last-child) {
-  margin-bottom: 40px;
+.block__tech {
+  @include phones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
+.tech__block {
+  @include tablets {
+    text-align: center;
+  }
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+ 
 
 .tech__title {
   font-family: "Roboto Medium", sans-serif;
@@ -239,8 +288,17 @@
   width: 110px;
   height: 110px;
   display: inline-block;
+  @include phones {
+    margin-bottom: 30px;
+    &:nth-child(n+1) {
+      margin-left: 20px;
+    }
+  }
   &:not(:last-child) {
     margin-right: 40px;
+    @include phones {
+      margin-right: 0;
+    }
   }
 }
 
@@ -268,6 +326,10 @@
     top: 41%;
     left: 50%;
     transform: translate(-50%,-50%); 
+    @include phones {
+      top: 0;
+      transform: translate(-50%, 0);
+    }
   }
   &__list {
     font-family: "Roboto Medium", sans-serif;

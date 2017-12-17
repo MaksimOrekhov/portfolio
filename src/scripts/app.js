@@ -36,6 +36,7 @@ backButton.onclick = function() {
   rotateContainer.classList.remove('active');
   authButton.classList.remove('auth__button-hidden');
 }
+
 }
 
 //подключение гугл-карты
