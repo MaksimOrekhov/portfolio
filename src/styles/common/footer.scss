@@ -1,11 +1,14 @@
 .footer__about {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
+  transform: translate(-50%, 0);
 }
 
 .footer {
+  max-width: 1800px;
+  margin: 0 auto;
   z-index: 5;
   background-color: rgba($color: #373e42, $alpha: 0.85);
 }
