@@ -54,7 +54,7 @@
   &__left {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 50%;
     background-color: #f0efe9;
     align-items: center;
     justify-content: center;
@@ -88,7 +88,7 @@
   }
   &__right {
     display: flex;
-    width: 50vw;
+    width: 50%;
     background-color: #efebe0;
     height: 70vh;
     justify-content: center;
