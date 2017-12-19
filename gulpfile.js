@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const autoprefixer = require('gulp-autoprefixer');
 const plumber = require('gulp-plumber');
+const babel = require('gulp-babel');
 
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
@@ -75,6 +76,9 @@ function scripts() {
     return gulp.src('src/scripts/app.js')
         .pipe(plumber())
         .pipe(gulpWebpack(webpackConfig, webpack)) 
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
