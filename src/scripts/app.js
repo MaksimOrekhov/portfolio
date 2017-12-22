@@ -131,3 +131,55 @@ window.onscroll = function() {
     const wScroll = window.pageYOffset;
     svgScroll.animate(wScroll);
 }
+
+// blur формы
+if (document.querySelector('.form__elem')) {
+const blur = (function() {
+    const wrapper = document.querySelector('.form__elem');
+    const form = document.querySelector('.form__blur');
+
+    return {
+        set: function() {
+            const imgWith = document.querySelector('.comments__bg').offsetWidth;
+            const posLeft = -wrapper.offsetLeft;
+            const posTop = -wrapper.offsetTop;
+            const blurCss = form.style;
+
+            blurCss.backgroundSize = imgWith + 'px' + ' ' + 'auto';
+            blurCss.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
+        }
+    }
+}());
+
+blur.set();
+
+window.onresize = function() {
+    blur.set();
+}
+}
+
+if (document.querySelector('.parallax')) {
+
+    const parallaxContainer = document.getElementById('parallax'),
+    layers = parallaxContainer.children;
+
+    const moveLayers = (e) => {
+    const initialX = (window.innerWidth / 2) - e.pageX;
+    const initialY = (window.innerHeight / 2) - e.pageY;
+
+    let i = 0;
+    for (let layer of layers) {
+        const divider = i / 80;
+        const positionX = initialX * divider;
+        const positionY = initialY * divider;
+        const bottomPosition = (window.innerHeight / 2) * divider;
+        const image = layer.firstElementChild;
+
+        layer.style.transform = `translate(${positionX}px, ${positionY}px)`;
+        image.style.bottom = `-${bottomPosition}px`;
+        i++;
+    }
+}  
+window.addEventListener('mousemove', moveLayers);
+}
+    

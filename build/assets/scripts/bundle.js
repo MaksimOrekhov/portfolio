@@ -2,7 +2,7 @@
 
 !function (e) {
   function t(o) {
-    if (n[o]) return n[o].exports;var c = n[o] = { i: o, l: !1, exports: {} };return e[o].call(c.exports, c, c.exports, t), c.l = !0, c.exports;
+    if (n[o]) return n[o].exports;var r = n[o] = { i: o, l: !1, exports: {} };return e[o].call(r.exports, r, r.exports, t), r.l = !0, r.exports;
   }var n = {};t.m = e, t.c = n, t.d = function (e, n, o) {
     t.o(e, n) || Object.defineProperty(e, n, { configurable: !1, enumerable: !0, get: o });
   }, t.n = function (e) {
@@ -44,7 +44,50 @@
           e.classList.remove("circle-50");
         });
       } };
-  }();window.onscroll = function () {
+  }();if (window.onscroll = function () {
     var e = window.pageYOffset;o.animate(e);
-  };
+  }, document.querySelector(".form__elem")) {
+    var _e4 = function () {
+      var e = document.querySelector(".form__elem"),
+          t = document.querySelector(".form__blur");return { set: function set() {
+          var n = document.querySelector(".comments__bg").offsetWidth,
+              o = -e.offsetLeft,
+              r = -e.offsetTop,
+              c = t.style;c.backgroundSize = n + "px auto", c.backgroundPosition = o + "px " + r + "px";
+        } };
+    }();_e4.set(), window.onresize = function () {
+      _e4.set();
+    };
+  }if (document.querySelector(".parallax")) {
+    var _e5 = document.getElementById("parallax").children;window.addEventListener("mousemove", function (t) {
+      var n = window.innerWidth / 2 - t.pageX,
+          o = window.innerHeight / 2 - t.pageY;var r = 0;var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = _e5[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var _t3 = _step.value;
+          var _e6 = r / 80,
+              c = n * _e6,
+              i = o * _e6,
+              l = window.innerHeight / 2 * _e6,
+              s = _t3.firstElementChild;_t3.style.transform = "translate(" + c + "px, " + i + "px)", s.style.bottom = "-" + l + "px", r++;
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    });
+  }
 }]);

@@ -1275,6 +1275,7 @@
           </div>
         </section>
         <section class="comments">
+          <div class="comments__bg"><img class="comments__bg-img" src="./assets/images/about_bg_bottom.png"></div>
           <div class="comments__title">
             <div class="title__line title__line-comments"></div>
             <div class="comments__title-text">Что обо мне говорят</div>
@@ -1597,23 +1598,22 @@
             </div>
           </div>
           <form class="form__elem" action="server.php" method="post" id="feedback-form">
-            <div class="feedback__form-overlay">
-              <div class="feedback__form">
-                <div class="form__inputs">
-                  <div class="form__title">
-                    <div class="title__line"></div>
-                    <div class="form__title-text">Связаться со мной</div>
-                    <div class="title__line"></div>
-                  </div>
-                  <input class="form__block-input" type="text" id="name" name="name" placeholder="Имя" required>
-                  <input class="form__block-input" type="text" id="email" placeholder="Email" name="email" required>
-                  <textarea class="form__block-input-textarea" type="text" placeholder="Ваше сообщение" id="comment" name="comment"></textarea>
+            <div class="feedback__form">
+              <div class="form__blur"></div>
+              <div class="form__inputs">
+                <div class="form__title">
+                  <div class="title__line"></div>
+                  <div class="form__title-text">Связаться со мной</div>
+                  <div class="title__line"></div>
                 </div>
-                <div class="form__buttons">
-                  <button class="send__button" type="submit">Отправить</button>
-                  <input class="reset__button" type="reset" value="Очистить">
-                </div>
+                <input class="form__block-input" type="text" id="name" name="name" placeholder="Имя" required>
+                <input class="form__block-input" type="text" id="email" placeholder="Email" name="email" required>
+                <textarea class="form__block-input-textarea" type="text" placeholder="Ваше сообщение" id="comment" name="comment"></textarea>
               </div>
+            </div>
+            <div class="form__buttons">
+              <button class="send__button" type="submit">Отправить</button>
+              <input class="reset__button" type="reset" value="Очистить">
             </div>
           </form><a class="go__to" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="16" viewBox="0 0 26 16">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>

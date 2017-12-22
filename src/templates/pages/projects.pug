@@ -48,6 +48,8 @@ block content
               .slider__item-overlay
                 include ../../icons/arrow_up.svg
       section.comments
+        .comments__bg
+          img(src="./assets/images/about_bg_bottom.png" class="comments__bg-img")
         .comments__title
           .title__line.title__line-comments
           .comments__title-text Что обо мне говорят
@@ -71,19 +73,19 @@ block content
                 .name__text Сабанцев Владимир
                 .name__occ преподаватель
         form(action="server.php" method="post" class="form__elem" id="feedback-form")
-          .feedback__form-overlay
-            .feedback__form
-              .form__inputs
-                .form__title
-                  .title__line
-                  .form__title-text Связаться со мной
-                  .title__line
-                input(type="text" class="form__block-input" id="name" name="name" placeholder="Имя" required)
-                input(type="text" class="form__block-input" id="email" placeholder="Email" name="email" required)
-                textarea(type="text" class="form__block-input-textarea" placeholder="Ваше сообщение" id="comment" name="comment")
-              .form__buttons
-                button(class="send__button" type="submit") Отправить
-                input(type="reset" class="reset__button" value="Очистить")
+          .feedback__form
+            .form__blur
+            .form__inputs
+              .form__title
+                .title__line
+                .form__title-text Связаться со мной
+                .title__line
+              input(type="text" class="form__block-input" id="name" name="name" placeholder="Имя" required)
+              input(type="text" class="form__block-input" id="email" placeholder="Email" name="email" required)
+              textarea(type="text" class="form__block-input-textarea" placeholder="Ваше сообщение" id="comment" name="comment")
+          .form__buttons
+            button(class="send__button" type="submit") Отправить
+            input(type="reset" class="reset__button" value="Очистить")
             
         a(href="#" class="go__to")
           include ../../icons/arrow.svg

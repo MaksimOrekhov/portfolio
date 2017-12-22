@@ -5,8 +5,6 @@
   overflow: hidden;
   
   &__main {
-    background: url('../images/main-bg.png') center center no-repeat;
-    background-size: cover;
     min-height: 100vh;  
   }
 }
@@ -22,6 +20,53 @@
     min-height: 650px;
     height: 100vh;
   }
+}
+
+#parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #a4c1bf;
+}
+
+.parallax__layer {
+  height: 100%;
+  width: 110%;
+  position: absolute;
+  bottom: 0;
+  left: -50px;
+  will-change: transform;
+  &:first-child .parallax__image {
+    height: 100%;
+  }
+  &:last-child .parallax__image {
+    width: 50%;
+    left: 20%;
+  }
+  &:nth-child(5) .parallax__image {
+    width: 17%;
+    left: 77%;
+    top: 0;
+    
+  }
+  &:nth-child(7) .parallax__image {
+    width: 21%;
+    left: 45%;
+    top: 15%;
+    
+  }
+}
+
+.parallax__image {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .auth__button {
@@ -90,7 +135,7 @@
 }
 
 .middle__card {
-  width: 382px;
+  width: 387px;
   align-self: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
@@ -179,9 +224,10 @@
   color: #fff;
   font-size: 16px;
   text-decoration: none;
-  display: inline-block;
-  padding: 15px 31px;
+  display: inline-flex;
+  padding: 15px 32px;
   transition: 0.5s;  
+
   @include phones {
   padding: 18px 17px;
   }

@@ -205,9 +205,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('../images/about_bg_bottom.png') center no-repeat;
-  background-size: cover;
   height: 100%;
+  position: relative;
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: -1;
+    &-img {
+      min-width: 100%;
+      min-height: 100%;
+      max-height: inherit;
+      max-width: inherit;
+    }
+  }
   &__title {
     position: relative;
     display: flex;
@@ -322,23 +335,22 @@
   display: flex;
   flex-direction: column;
   width: 380px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   overflow: hidden;
-  margin-bottom: 70px;
-  z-index: 5;
-  background-color: rgba($color: #fff, $alpha: 0.5);
+  padding: 38px 20px 0 20px;
   @include phones {
     width: 300px;
     margin-bottom: 50px;
   }
-  &-overlay {
-    
-  }
 }
 
 .form {
+  &__elem {
+    position: relative;
+  }
   &__buttons {
   display: flex;
+  margin-bottom: 70px;
   }
   &__title {
     display: flex;
@@ -352,7 +364,17 @@
   }
   &__inputs {
     width: 100%;
-    padding: 38px 20px 0 20px;
+  }
+  &__blur {
+    background: url(../images/about_bg_bottom.png) center no-repeat;
+    width: 100%;
+    height: 100%;
+    filter: blur(20px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
   }
 }
 
