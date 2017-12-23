@@ -6,6 +6,10 @@
   
   &__main {
     min-height: 100vh;  
+    @include tablets {
+      background: url('../images/main-bg-tablets.png') center no-repeat;
+      background-size: cover;
+    }
   }
 }
 
@@ -30,11 +34,14 @@
   height: 100%;
   overflow: hidden;
   background: #a4c1bf;
+  @include tablets {
+    display: none;
+  }
 }
 
 .parallax__layer {
   height: 100%;
-  width: 110%;
+  width: 120%;
   position: absolute;
   bottom: 0;
   left: -70px;
@@ -211,9 +218,12 @@
   background-color: rgba(10, 172, 152, 0.7);
   overflow: hidden;
   border-radius: 0 0 7px 7px;
+  justify-content: center;
 }
 
 .buttons__item {
+  width: 100%;
+  text-align: center;
   &:nth-child(2) {
     border-left: 2px solid #73c8c0;
     border-right: 2px solid #73c8c0;    
@@ -221,21 +231,24 @@
 }
 
 .buttons__link {
+  width: 100%;
   color: #fff;
   font-size: 16px;
   text-decoration: none;
-  display: inline-flex;
-  padding: 15px 32px;
+  display: inline-block;
+  padding: 15px 0;
   transition: 0.5s;  
 
   @include phones {
-  padding: 18px 17px;
+  padding: 18px 5px;
+  font-size: 13px;;
   }
   &:hover {
     background-color: rgba(11, 144, 136, 0.7);
     transition: 0.5s;    
   }
 }
+
 
 .copyright {
   align-self: center;
