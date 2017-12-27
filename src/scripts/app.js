@@ -117,10 +117,6 @@ const svgScroll = (function() {
                 circle.forEach((item) => {
                     item.classList.add('circle-50');
                 });
-            } else {
-                circle.forEach((item) => {
-                    item.classList.remove('circle-50');
-                });
             }
         }
     }
@@ -133,31 +129,33 @@ window.onscroll = function() {
 }
 
 // blur формы
+
 if (document.querySelector('.form__elem')) {
-const blur = (function() {
-    const wrapper = document.querySelector('.form__elem');
-    const form = document.querySelector('.form__blur');
-
-    return {
-        set: function() {
-            const imgWith = document.querySelector('.comments__bg').offsetWidth;
-            const posLeft = -wrapper.offsetLeft;
-            const posTop = -wrapper.offsetTop;
-            const blurCss = form.style;
-
-            blurCss.backgroundSize = imgWith + 'px' + ' ' + 'auto';
-            blurCss.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
+    const blur = (function() {
+        const wrapper = document.querySelector('.form__elem');
+        const form = document.querySelector('.form__blur');
+    
+        return {
+            set: function() {
+                const imgWidth = document.querySelector('.comments__bg-img').naturalWidth;
+                const posLeft = -wrapper.offsetLeft;
+                const posTop = -wrapper.offsetTop;
+                const blurCss = form.style;
+    
+                blurCss.backgroundSize = (imgWidth) + 'px' + ' ' + 'auto';
+                blurCss.backgroundPosition = posLeft + 'px' + ' ' + (posTop) + 'px';
+            }
         }
-    }
-}());
-
+    }());
+    
 blur.set();
-
+    
 window.onresize = function() {
     blur.set();
 }
 }
 
+// параллакс
 if (document.querySelector('.parallax')) {
 
     const parallaxContainer = document.getElementById('parallax'),
@@ -181,5 +179,52 @@ if (document.querySelector('.parallax')) {
     }
 }  
 window.addEventListener('mousemove', moveLayers);
+
 }
     
+// прелоадер 
+    let preloader = document.querySelector('.preloader');
+    let preloaderText = document.querySelector('.preloader__num');
+    let currentPercent = 0;
+    let circleOne = document.querySelector('.circle-1');
+    let circleTwo = document.querySelector('.circle-2');
+    let circleThree = document.querySelector('.circle-3');
+    let delayCircleOne = 30;
+    let delayCircleTwo = 20;
+
+let preloaderAnimate = setInterval(function() {
+    currentPercent += 5;
+    document.onmousewheel = function (e) {
+        e.preventDefault();
+      } 
+    
+    if (currentPercent >= 100) {
+        document.onmousewheel = function (e) {
+            
+          } 
+        preloaderText.innerHTML = 100
+        currentPercent = 100;
+        clearInterval(preloaderAnimate)
+        setTimeout(()=>{
+            preloader.style.opacity = 0
+            preloaderText.style.opacity = 0
+        },500)
+        setTimeout(()=>{
+            preloader.style.opacity = 0
+            setTimeout(()=>{
+                preloader.style.display = 'none'
+            },1500)
+        },1000)
+    }
+    if (currentPercent > delayCircleOne) {
+        circleOne.style.strokeDashoffset = 440 - (440 / 100 * (currentPercent * (delayCircleOne / 100 + 1) - delayCircleOne))
+    }
+    if (currentPercent > delayCircleTwo) {
+        circleTwo.style.strokeDashoffset = 350 - (350 / 100 * (currentPercent * (delayCircleTwo / 100 + 1) - delayCircleTwo))
+    }
+    circleThree.style.strokeDashoffset = 260 - (260 / 100 * currentPercent)
+
+    preloaderText.innerHTML = currentPercent;
+
+}, 100);
+

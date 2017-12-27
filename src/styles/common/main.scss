@@ -13,6 +13,54 @@
   }
 }
 
+.preloader {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 1000;
+  background: url('../images/bg.jpg') center no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+  svg {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__num {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #fff;
+    font-family: Arial, sans-serif
+  }
+  .circle-1 {
+    stroke-dashoffset: 540;
+    stroke-dasharray: 540;
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+  }
+  .circle-2 {
+    stroke-dashoffset: 350;
+    stroke-dasharray: 350;
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+  }
+  .circle-3 {
+    stroke-dashoffset: 260;
+    stroke-dasharray: 260;
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+  }
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -253,6 +301,7 @@
 
 .copyright {
   align-self: center;
+  z-index: 100;
   @include phones {
     display: none;
   }
