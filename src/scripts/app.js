@@ -137,13 +137,13 @@ if (document.querySelector('.form__elem')) {
     
         return {
             set: function() {
-                const imgWidth = document.querySelector('.comments__bg-img').naturalWidth;
+                const imgWidth = document.querySelector('.comments__bg-img').offsetWidth;
                 const posLeft = -wrapper.offsetLeft;
                 const posTop = -wrapper.offsetTop;
                 const blurCss = form.style;
     
-                blurCss.backgroundSize = (imgWidth) + 'px' + ' ' + 'auto';
-                blurCss.backgroundPosition = posLeft + 'px' + ' ' + (posTop) + 'px';
+                blurCss.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
+                blurCss.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
             }
         }
     }());
@@ -183,6 +183,7 @@ window.addEventListener('mousemove', moveLayers);
 }
     
 // прелоадер 
+if (document.querySelector('.preloader')) {
     let preloader = document.querySelector('.preloader');
     let preloaderText = document.querySelector('.preloader__num');
     let currentPercent = 0;
@@ -213,7 +214,7 @@ let preloaderAnimate = setInterval(function() {
             preloader.style.opacity = 0
             setTimeout(()=>{
                 preloader.style.display = 'none'
-            },1500)
+            },1000)
         },1000)
     }
     if (currentPercent > delayCircleOne) {
@@ -227,4 +228,81 @@ let preloaderAnimate = setInterval(function() {
     preloaderText.innerHTML = currentPercent;
 
 }, 100);
+}
 
+// сайдбар на странице блог на мобильных устройствах
+if (document.querySelector('.blog__nav')) {
+
+    let sidebarButton = document.querySelector('.blog__nav-link');
+    let sidebar = document.querySelector('.blog__nav');
+
+    sidebarButton.onclick = function(e) {
+        e.preventDefault();
+        sidebar.classList.toggle('blog__nav-active');
+    }
+
+}
+
+// сайдбар страницы блог на десктопах
+
+if (document.querySelector('.blog__nav')) {
+window.onscroll = function() {
+    let sidebar = document.querySelector('.blog__nav'),
+        sectionBlog = document.querySelector('.blog'),
+        windowMargin = window.innerHeight / 3,
+        wScroll = window.pageYOffset,
+        articles = document.querySelector('.blog__articles');
+
+    const sidebarFixed = wScroll + windowMargin;
+
+    if (sidebarFixed >= 700) {
+        sidebar.classList.add('blog__nav-fixed');
+        articles.classList.add('blog__articles-fixed');
+    } else {
+        sidebar.classList.remove('blog__nav-fixed');  
+        articles.classList.remove('blog__articles-fixed');
+              
+    }
+}
+
+// прокрутка к нужной статье
+
+let linkNav = document.querySelectorAll('[href^="#article"]'),
+    speed = 0.5;
+for (let i = 0; i < linkNav.length; i++) {
+    linkNav[i].addEventListener('click', function(e) { 
+        e.preventDefault();
+        let w = window.pageYOffset,
+            hash = this.href.replace(/[^#]*(.*)/, '$1'),
+        scroll = document.querySelector(hash).getBoundingClientRect().top,
+            start = null;
+        requestAnimationFrame(step); 
+        function step(time) {
+            if (start === null) start = time;
+            let progress = time - start,
+                r = (scroll < 0 ? Math.max(w - progress/speed, w + scroll) : Math.min(w + progress/speed, w + scroll));
+            window.scrollTo(0,r);
+            if (r != w + scroll) {
+                requestAnimationFrame(step);
+            } else {
+                location.hash = hash;
+            }
+        }
+    }, false);
+}
+
+let sidebarItem = document.querySelectorAll('.blog__item'),
+    sidebarLink = document.querySelectorAll('[href^="#article"]'),
+    article = document.querySelectorAll('[id^="#article"]'),
+    currentArticle;
+
+
+    // sidebarLink.forEach((item) => {
+        article.forEach((i) => {
+        if ( i.getBoundingClientRect().top == 0) {
+            i.classList.add('active')
+        }
+    })
+// })
+    
+}

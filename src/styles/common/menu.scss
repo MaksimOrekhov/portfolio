@@ -21,6 +21,9 @@
   &__item {
     &:not(:last-child) {
       margin-bottom: 88px;
+      @include phones {
+        margin-bottom: 50px;
+      }
     }
   }
   &__link {

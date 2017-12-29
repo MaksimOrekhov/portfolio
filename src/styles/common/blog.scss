@@ -29,11 +29,51 @@
 .blog {
   display: flex;
   margin-top: 70px;
+  &__link {
+    font-size: 16px;
+    color: #455a64;
+    text-decoration: none;
+    &:hover {
+      color: #00bfa5;
+      transition: 0.4s;      
+    }
+  }
   &__nav {
     width: 26%;
     padding-left: 40px;
+    transition: 0.5s; 
+    &-fixed {
+      position: fixed;
+      top: 35%;
+      z-index: 100;
+    }   
     @include tablets {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      background-color: #00bfa5;
+      padding-left: 10px;
+      z-index: 100;
+      width: 300px;
+      left: -300px;
+      &-active {
+        left: 0;
+        transition: 0.5s;
+      }
+    }
+    
+    &-link {
       display: none;
+      @include tablets {
+        position: absolute;
+        display: inline-block;
+        height: 40px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: #00bfa5;
+        left: 97%;
+        top: 50%;
+      }
     }
   }
   &__articles {
@@ -44,30 +84,46 @@
       width: 100%;
       padding: 0 25px;
     }
+    &-fixed {
+      margin-left: 26%;
+    }
   }
   &__list {
     text-align: right;
     padding-right: 50px;
+    @include tablets {
+      padding-right: 5px;  
+      padding-top: 100%;    
+    }
+    @include phones {
+      padding-top: 80%;          
+    }
   }
   &__item {
     padding: 15px 20px 15px 0;
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    color: #455a64;
-    cursor: pointer;
-    transition: 0.4s;          
-    &:hover {
-      color: #00bfa5;
-      transition: 0.4s;      
-    }
+    transition: 0.4s;   
+         
+    @include tablets {
+      color: #fff; 
+      &:hover {
+        color: #fff;    
+      }     
+    } 
     &-active {
       border-right: 2px solid #00bfa5;
-      color: #00bfa5;
       font-weight: bold;
+      & .blog__link {
+        color: #00bfa5;
+      }
+      @include tablets {
+        color: #fff;      
+      }  
     }
     &:not(:last-child) {
       margin-bottom: 10px;
     }
+    
   }
 }
 
@@ -80,7 +136,7 @@
     @include phones {
       padding-bottom: 30px;
     }
-    &:first-child {
+    &:not(:last-child) {
       border-bottom: 5px solid #f1f1f2;
     }
     &:not(:first-child) {

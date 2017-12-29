@@ -2,7 +2,7 @@
 
 !function (e) {
   function t(n) {
-    if (o[n]) return o[n].exports;var r = o[n] = { i: n, l: !1, exports: {} };return e[n].call(r.exports, r, r.exports, t), r.l = !0, r.exports;
+    if (o[n]) return o[n].exports;var l = o[n] = { i: n, l: !1, exports: {} };return e[n].call(l.exports, l, l.exports, t), l.l = !0, l.exports;
   }var o = {};t.m = e, t.c = o, t.d = function (e, o, n) {
     t.o(e, o) || Object.defineProperty(e, o, { configurable: !1, enumerable: !0, get: n });
   }, t.n = function (e) {
@@ -48,10 +48,10 @@
     var _e4 = function () {
       var e = document.querySelector(".form__elem"),
           t = document.querySelector(".form__blur");return { set: function set() {
-          var o = document.querySelector(".comments__bg-img").naturalWidth,
+          var o = document.querySelector(".comments__bg-img").offsetWidth,
               n = -e.offsetLeft,
-              r = -e.offsetTop,
-              c = t.style;c.backgroundSize = o + "px auto", c.backgroundPosition = n + "px " + r + "px";
+              l = -e.offsetTop,
+              r = t.style;r.backgroundSize = o + "px auto", r.backgroundPosition = n + "px " + l + "px";
         } };
     }();_e4.set(), window.onresize = function () {
       _e4.set();
@@ -59,18 +59,18 @@
   }if (document.querySelector(".parallax")) {
     var _e5 = document.getElementById("parallax").children;window.addEventListener("mousemove", function (t) {
       var o = window.innerWidth / 2 - t.pageX,
-          n = window.innerHeight / 2 - t.pageY;var r = 0;var _iteratorNormalCompletion = true;
+          n = window.innerHeight / 2 - t.pageY;var l = 0;var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
 
       try {
         for (var _iterator = _e5[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var _t3 = _step.value;
-          var _e6 = r / 80,
-              _c = o * _e6,
-              _l = n * _e6,
-              _i = window.innerHeight / 2 * _e6,
-              _u = _t3.firstElementChild;_t3.style.transform = "translate(" + _c + "px, " + _l + "px)", _u.style.bottom = "-" + _i + "px", r++;
+          var _e6 = l / 80,
+              r = o * _e6,
+              c = n * _e6,
+              i = window.innerHeight / 2 * _e6,
+              u = _t3.firstElementChild;_t3.style.transform = "translate(" + r + "px, " + c + "px)", u.style.bottom = "-" + i + "px", l++;
         }
       } catch (err) {
         _didIteratorError = true;
@@ -87,21 +87,50 @@
         }
       }
     });
-  }var r = document.querySelector(".preloader"),
-      c = document.querySelector(".preloader__num"),
-      l = 0,
-      i = document.querySelector(".circle-1"),
-      u = document.querySelector(".circle-2"),
-      s = document.querySelector(".circle-3"),
-      a = setInterval(function () {
-    l += 5, document.onmousewheel = function (e) {
-      e.preventDefault();
-    }, l >= 100 && (document.onmousewheel = function (e) {}, c.innerHTML = 100, l = 100, clearInterval(a), setTimeout(function () {
-      r.style.opacity = 0, c.style.opacity = 0;
-    }, 500), setTimeout(function () {
-      r.style.opacity = 0, setTimeout(function () {
-        r.style.display = "none";
-      }, 1500);
-    }, 1e3)), l > 30 && (i.style.strokeDashoffset = 440 - 4.4 * (1.3 * l - 30)), l > 20 && (u.style.strokeDashoffset = 350 - 3.5 * (1.2 * l - 20)), s.style.strokeDashoffset = 260 - 2.6 * l, c.innerHTML = l;
-  }, 100);
+  }if (document.querySelector(".preloader")) {
+    var _e7 = document.querySelector(".preloader"),
+        _t4 = document.querySelector(".preloader__num"),
+        _o2 = 0,
+        _n = document.querySelector(".circle-1"),
+        l = document.querySelector(".circle-2"),
+        r = document.querySelector(".circle-3"),
+        c = setInterval(function () {
+      _o2 += 5, document.onmousewheel = function (e) {
+        e.preventDefault();
+      }, _o2 >= 100 && (document.onmousewheel = function (e) {}, _t4.innerHTML = 100, _o2 = 100, clearInterval(c), setTimeout(function () {
+        _e7.style.opacity = 0, _t4.style.opacity = 0;
+      }, 500), setTimeout(function () {
+        _e7.style.opacity = 0, setTimeout(function () {
+          _e7.style.display = "none";
+        }, 1e3);
+      }, 1e3)), _o2 > 30 && (_n.style.strokeDashoffset = 440 - 4.4 * (1.3 * _o2 - 30)), _o2 > 20 && (l.style.strokeDashoffset = 350 - 3.5 * (1.2 * _o2 - 20)), r.style.strokeDashoffset = 260 - 2.6 * _o2, _t4.innerHTML = _o2;
+    }, 100);
+  }if (document.querySelector(".blog__nav")) {
+    var _e8 = document.querySelector(".blog__nav-link"),
+        _t5 = document.querySelector(".blog__nav");_e8.onclick = function (e) {
+      e.preventDefault(), _t5.classList.toggle("blog__nav-active");
+    };
+  }if (document.querySelector(".blog__nav")) {
+    (function () {
+      window.onscroll = function () {
+        var e = document.querySelector(".blog__nav"),
+            t = (document.querySelector(".blog"), window.innerHeight / 3),
+            o = window.pageYOffset,
+            n = document.querySelector(".blog__articles");o + t >= 700 ? (e.classList.add("blog__nav-fixed"), n.classList.add("blog__articles-fixed")) : (e.classList.remove("blog__nav-fixed"), n.classList.remove("blog__articles-fixed"));
+      };var e = document.querySelectorAll('[href^="#article"]'),
+          t = .5;for (var _o3 = 0; _o3 < e.length; _o3++) {
+        e[_o3].addEventListener("click", function (e) {
+          function o(e) {
+            null === c && (c = e);var i = e - c,
+                u = r < 0 ? Math.max(n - i / t, n + r) : Math.min(n + i / t, n + r);window.scrollTo(0, u), u != n + r ? requestAnimationFrame(o) : location.hash = l;
+          }e.preventDefault();var n = window.pageYOffset,
+              l = this.href.replace(/[^#]*(.*)/, "$1"),
+              r = document.querySelector(l).getBoundingClientRect().top,
+              c = null;requestAnimationFrame(o);
+        }, !1);
+      }document.querySelectorAll(".blog__item"), document.querySelectorAll('[href^="#article"]');document.querySelectorAll('[id^="#article"]').forEach(function (e) {
+        0 == e.getBoundingClientRect().top && e.classList.add("active");
+      });
+    })();
+  }
 }]);
