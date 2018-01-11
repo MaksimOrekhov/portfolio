@@ -1,6 +1,9 @@
 extends ../template
 include ../common/mixins
 
+block variables
+    - var title = 'Мои работы'
+
 block content
   .wrapper
     .container__projects
@@ -27,25 +30,63 @@ block content
           include ../../icons/works_header.svg
         .slider__container
           .slider__left
-            .slider__left-title
-              .title__line.title__line-slider
-              .slider__left-text Сайт школы онлайн образования
-              .title__line.title__line-slider
-            .slider__left-tech html, css, javascript
-            a(href="#" class="slider__left-button__link")
-              include ../../icons/link.svg
-              span.button__link-text Посмотреть сайт
+            ul.slider__left-list
+              li.slider__left-item.slider__left-item--active
+                .slider__left-title
+                  .title__line.title__line-slider
+                  .slider__left-text Сайт школы онлайн образования
+                  .title__line.title__line-slider
+                .slider__left-tech html, css, javascript
+                a(href="#" class="slider__left-button__link")
+                  include ../../icons/link.svg
+                  span.button__link-text Посмотреть сайт
+              li.slider__left-item
+                .slider__left-title
+                  .title__line.title__line-slider
+                  .slider__left-text Сайт портфолио
+                  .title__line.title__line-slider
+                .slider__left-tech html, css, javascript
+                a(href="#" class="slider__left-button__link")
+                  include ../../icons/link.svg
+                  span.button__link-text Посмотреть сайт
+              li.slider__left-item
+                .slider__left-title
+                  .title__line.title__line-slider
+                  .slider__left-text Лендинг
+                  .title__line.title__line-slider
+                .slider__left-tech html, css, javascript
+                a(href="#" class="slider__left-button__link")
+                  include ../../icons/link.svg
+                  span.button__link-text Посмотреть сайт
           .slider__right
-            .slider__item.slider__item-current
-              img(class="slider__image-current" src="./assets/images/slider__item1.png")
+            .slider__wrapper
+              ul.wrapper__slider-list
+                li.wrapper__slider-item.wrapper__slider-item--active
+                  img(class="slider__image-current" src="./assets/images/slider__item1.png")
+                li.wrapper__slider-item
+                  img(class="slider__image-current" src="./assets/images/slider__item3.png")
+                li.wrapper__slider-item
+                  img(class="slider__image-current" src="./assets/images/slider__item2.png")
           .slider__items-bottom
             .slider__item.slider__item-other
-              img(class="slider__image" src="./assets/images/slider__item2.png")
-              .slider__item-overlay
+              ul.slider__prev-list
+                li.slider__prev-list__item
+                  img(class="slider__image" src="./assets/images/slider__item1.png")
+                li.slider__prev-list__item.slider__prev-list__item--active
+                  img(class="slider__image" src="./assets/images/slider__item2.png")
+                li.slider__prev-list__item
+                  img(class="slider__image" src="./assets/images/slider__item3.png")
+              .slider__item-overlay.slider__item-overlay__prev
                 include ../../icons/arrow_down.svg
             .slider__item.slider__item-other
-              img(class="slider__image" src="./assets/images/slider__item3.png")
-              .slider__item-overlay
+              ul.slider__next-list
+                li.slider__next-list__item
+                  img(class="slider__image" src="./assets/images/slider__item3.png")
+                li.slider__next-list__item
+                  img(class="slider__image" src="./assets/images/slider__item2.png")
+                li.slider__next-list__item.slider__next-list__item--active
+                  img(class="slider__image" src="./assets/images/slider__item1.png")
+              .slider__item-overlay.slider__item-overlay__next
                 include ../../icons/arrow_up.svg
       section.comments
         .comments__bg
@@ -87,7 +128,7 @@ block content
             button(class="send__button" type="submit") Отправить
             input(type="reset" class="reset__button" value="Очистить")
             
-        a(href="#" class="go__to")
+        a(href="#" class="go__to go__to-top")
           include ../../icons/arrow.svg
         
   
