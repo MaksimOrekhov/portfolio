@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Html",
+    "percents": 10,
+    "type": 1
+  },
+  {
+    "id": 2,
+    "name": "CSS",
+    "percents": 30,
+    "type": 1
+  },
+  {
+    "id": 3,
+    "name": "JavaScript",
+    "percents": 40,
+    "type": 1
+  },
+  {
+    "id": 4,
+    "name": "Git",
+    "percents": 50,
+    "type": 2
+  },
+  {
+    "id": 5,
+    "name": "Gulp",
+    "percents": 20,
+    "type": 2
+  },
+  {
+    "id": 6,
+    "name": "Bower",
+    "percents": 0,
+    "type": 2
+  },
+  {
+    "id": 7,
+    "name": "PHP",
+    "percents": 0,
+    "type": 3
+  },
+  {
+    "id": 8,
+    "name": "Node.js",
+    "percents": 10,
+    "type": 3
+  },
+  {
+    "id": 9,
+    "name": "Mongo.db",
+    "percents": 10,
+    "type": 3
+  }
+]

@@ -45,6 +45,10 @@ const paths = {
     fav: {
         src: './*.ico',
         dest: 'build/'
+    },
+    json: {
+        src: './data.json',
+        dest: 'build/'
     }
 }
 
@@ -118,6 +122,13 @@ function fav() {
         .pipe(gulp.dest(paths.fav.dest));
 }
 
+// перенос json data
+function json() {
+    return gulp.src(paths.json.src)
+        .pipe(plumber())
+        .pipe(gulp.dest(paths.json.dest));
+}
+
 // перенос шрифтов
 function fonts() {
     return gulp.src(paths.fonts.src)
@@ -139,9 +150,10 @@ exports.images = images;
 exports.fonts = fonts;
 exports.icons = icons;
 exports.fav = fav;
+exports.json = json;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts, fonts, icons, fav),
+    gulp.parallel(styles, templates, images, scripts, fonts, icons, fav, json),
     gulp.parallel(watch, server)
 ));

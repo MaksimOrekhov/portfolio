@@ -5,17 +5,17 @@ import footer from './modules/footer';
 import skills from './modules/skills';
 import blur from './modules/blur';
 import parallax from './modules/parallax';
-// import preloader from './modules/preloader';
 import blogSidebar from './modules/blogSidebar';
 import blogSidebarDesktop from './modules/blogSidebarDesktop';
 import upDownButtons from './modules/upDownButtons';
 import slider from './modules/slider';
+import stylesBundle from './modules/styles.bundle';
+import entryBundle from './modules/entry.bundle';
 
 
 
 
-let domloaded = function () {
-    // preloader();    
+let domloaded = function () {  
     hamburger();
     authFormFlip();
     map();
